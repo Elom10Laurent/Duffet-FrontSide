@@ -1,8 +1,6 @@
-import React from 'react'
 
 import image from "@/assets/product/img-1.png"
 import image1 from "@/assets/product/Pro-8.png"
-import image2 from "@/assets/product/img-3.png"
 import image3 from "@/assets/product/Pro-12b.png"
 import { Link } from 'react-router-dom'
 

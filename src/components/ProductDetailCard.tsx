@@ -1,5 +1,3 @@
-import React from 'react'
-
 import picture from "@/assets/product/img-4.png"
 
 const ProductDetailCard = () => {
