@@ -14,7 +14,14 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     cors: true,
-    allowedHosts: ["all"]
+    allowedHosts: ["duffet.onrender.com"],
+    proxy: {
+      "/api": {
+        target: "https://duffet.onrender.com",
+        changeOrigin: true,
+        secure: false
+      }
+    }
   }
   
 })
