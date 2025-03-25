@@ -1,21 +1,17 @@
-import CategoryProductMatch from '@/components/CategoryProductMatch'
-import Footer from '@/components/Footer'
-import HomeNavBar from '@/components/HomeNavBar'
-import ProductDetailCard from '@/components/ProductDetailCard'
+import CategoryProductMatch from "@/components/CategoryProductMatch";
+import ProductDetailCard from "@/components/ProductDetailCard";
+import { useOutletContext } from 'react-router-dom';
 
 
-const ProductDetail = () => {
+const ProductDetail = ( ) => {
+  const { addTotheBasket } = useOutletContext<{ addTotheBasket: (productNumber: number) => void }>();
+
   return (
-   <div>
-    <HomeNavBar/>
+    <div>
+      <ProductDetailCard addTotheBasket={addTotheBasket}  />
+      <CategoryProductMatch />
+    </div>
+  );
+};
 
-    <ProductDetailCard/>
-
-    <CategoryProductMatch/>
-
-    <Footer/>
-   </div>                                        
-  )
-}
-
-export default ProductDetail
+export default ProductDetail;

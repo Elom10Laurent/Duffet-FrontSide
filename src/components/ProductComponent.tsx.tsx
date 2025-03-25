@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import StarRatings from "react-star-ratings";
 import { Card, CardBody, Row } from "reactstrap";
 
@@ -6,22 +6,24 @@ import { clothingfewCategories, productsData } from "@/Mock/Products";
 import { Link } from "react-router-dom";
 
 const ProductComponent = () => {
-  const [active, setActive] = useState<string | null>('T-shirts');
- 
-
-
-  const filterProductions = active !== null ? productsData.filter((product) => product.category === active) : [];
+  const [active, setActive] = useState<string | null>("T-shirts");
+  const filterProductions =
+    active !== null
+      ? productsData.filter((product) => product.category === active)
+      : [];
 
   return (
     <div className=" py-10 px-4">
-        {/* Barre de catégories */}
-        <div className="flex justify-center mb-10">
-        <div className="flex gap-4 justify-center">
+      {/* Barre de catégories */}
+      <div className="flex  justify-center mb-10">
+        <div className="flex   gap-4 justify-center">
           {clothingfewCategories.map((category) => (
             <div
               key={category}
               className={`border-2 border-gray-900 px-8 py-2 font-semibold rounded-full cursor-pointer transition duration-300 ease-in-out ${
-                active === category ? "bg-slate-900 text-white" : "hover:bg-gray-200"
+                active === category
+                  ? "bg-slate-900 text-white"
+                  : "hover:bg-gray-200"
               }`}
               onClick={() => setActive(category)}
             >
@@ -47,47 +49,55 @@ const ProductComponent = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto">
-        <Row className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filterProductions.map((product) =>
-
+      <div>
+        <Row className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6">
+          {filterProductions.map((product) => (
             <Card
               key={product.id}
               className="w-full bg-white rounded-lg shadow-lg"
-            >          <Link  to={`/Product/${product.id}/${product.category}`} > <CardBody>
-                <div className=" relative  ">
-                  <div className=" flex justify-end m-3 ">
-                    <span className=" absolute rounded-full bg-blue-700 text-white px-2 py-4 font-semibold ">
-                      - {product.offer} %
-                    </span>
-                  </div>
-                  <img src={product.image} alt="Product" className=" mx-auto" />
-                </div>
-                <div className=" text-center">
-                  <h4 className=" text-lg  "> {product.name} </h4>
-                  <div>
-                    <StarRatings
-                      rating={product.rating}
-                      starRatedColor="#F1B44C"
-                      starEmptyColor="#74788d"
-                      numberOfStars={5}
-                      name="rating"
-                      starDimension="14px"
-                      starSpacing="1px"
+            >
+              {" "}
+              <Link to={`/Product/${product.id}/${product.category}`}>
+                {" "}
+                <CardBody>
+                  <div className=" relative  ">
+                    <div className=" flex justify-end m-3 ">
+                      <span className=" absolute rounded-full bg-blue-700 text-white px-2 py-4 font-semibold ">
+                        - {product.offer} %
+                      </span>
+                    </div>
+                    <img
+                      src={product.image}
+                      alt="Product"
+                      className=" mx-auto"
                     />
                   </div>
-                  <h5 className="my-0 text-gray-600">
-                    <span className=" me-2 font-semibold">
-                      <del>${product.oldPrice} </del>
-                    </span>
-                    <b className=" font-extrabold text-gray-700 ">${product.newPrice} </b>
-                  </h5>
-                </div>
-              </CardBody></Link>
-
-             
+                  <div className=" text-center">
+                    <h4 className=" text-lg  "> {product.name} </h4>
+                    <div>
+                      <StarRatings
+                        rating={product.rating}
+                        starRatedColor="#F1B44C"
+                        starEmptyColor="#74788d"
+                        numberOfStars={5}
+                        name="rating"
+                        starDimension="14px"
+                        starSpacing="1px"
+                      />
+                    </div>
+                    <h5 className="my-0 text-gray-600">
+                      <span className=" me-2 font-semibold">
+                        <del>${product.oldPrice} </del>
+                      </span>
+                      <b className=" font-extrabold text-gray-700 ">
+                        ${product.newPrice}{" "}
+                      </b>
+                    </h5>
+                  </div>
+                </CardBody>
+              </Link>
             </Card>
-          )}
+          ))}
         </Row>
       </div>
     </div>

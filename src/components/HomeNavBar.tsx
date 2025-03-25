@@ -1,7 +1,13 @@
-import { useState, useEffect } from "react";
+import { ShoppingCart } from "lucide-react";
+import { useState, useEffect, FC } from "react";
 import { Link } from "react-router-dom";
 
-const HomeNavBar = () => {
+
+interface HomeNavBarProps {
+  value: number; 
+}
+
+const HomeNavBar: FC<HomeNavBarProps> = ({ value }) => {
   const [active, setActive] = useState("Shop");
   const [emoji, setEmoji] = useState("😎");
 
@@ -12,7 +18,7 @@ const HomeNavBar = () => {
   const menuItems = ["Shop", "Collections", "Customer Box", "...", "Contact"];
 
   return (
-    <div className="mb-20">
+    <div className="mb-14">
       {/* Barres décoratives */}
       <div className="flex flex-col space-y-2">
         <div className="h-8 bg-gray-900"></div>
@@ -48,7 +54,7 @@ const HomeNavBar = () => {
 
         {/* Liens utilisateur */}
         <ul className="flex space-x-6 text-lg">
-          <li className="hover:text-gray-700 cursor-pointer">Cart 0</li>
+          <li className="hover:text-gray-700 cursor-pointer"> <Link to="/product/cart" className="flex gap-1 justify-center items-center"> <ShoppingCart/>{value}</Link>   </li>
           <li className="hover:text-gray-700 cursor-pointer">My Name</li>
         </ul>
       </nav>
