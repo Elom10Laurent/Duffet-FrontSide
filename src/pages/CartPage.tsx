@@ -1,11 +1,8 @@
 import Cart from "@/components/Cart";
 import CartPaymentCard from "@/components/CartPaymentCard";
-import PayementCard from "@/components/PayementCard";
-import { useState } from "react";
+
 
 const CartPage = () => {
-const [visiblePayement, setVisiblePayement] = useState('')
-
   return (
     <div className=" md:mx-10  flex-col space-y-10 mb-5">
       <div className="flex flex-col md:flex-row gap-6 ">

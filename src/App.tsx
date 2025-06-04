@@ -5,11 +5,15 @@ import CartPage from "./pages/CartPage";
 import HomeLayout from "./layout/HomeLayout";
 import ShippingPage from "./pages/ShippingPage";
 import HomePage from "./pages/HomePage";
+import Connect from "./pages/auth/Connect";
+import Register from "./pages/auth/Register";
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/connect" element={<Connect />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/product/:id/:name" element={<ProductDetail />} />

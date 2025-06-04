@@ -1,8 +1,11 @@
+import { useCart } from "@/context/CartContext";
 import React, { useState } from "react";
 
 const CartPaymentCard = () => {
   const [promoCode, setPromoCode] = useState("");
   const [error, setError] = useState("");
+  const { cart } = useCart();
+  const isDisabled = cart.length === 0; // Désactiver si card est vide
 
   // Liste des produits avec nom et prix
   const products = [
@@ -47,8 +50,12 @@ const CartPaymentCard = () => {
             />
             <button
               type="button"
-              className="bg-gray-900 text-white flex items-center justify-center px-6 py-2 rounded-full hover:bg-gray-700 transition"
+              className={`bg-gray-900 text-white flex items-center justify-center px-6 py-2 rounded-full transition 
+          ${
+            isDisabled ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-700"
+          }`}
               onClick={applyPromoCode}
+              disabled={isDisabled}
             >
               Appliquer
             </button>
@@ -62,36 +69,46 @@ const CartPaymentCard = () => {
           )}
 
           {/* Tableau des produits */}
+
           <div className="border-t-2 border-gray-400 mt-6">
-            <div className="py-4">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="border-b-2 border-gray-300">
-                    <th className="p-2 text-gray-600">Produit</th>
-                    <th className="p-2 text-gray-600 text-right">Prix (€)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {products.map((product, index) => (
-                    <tr key={index} className="border-b border-gray-200">
-                      <td className="p-2 text-gray-800">{product.name}</td>
-                      <td className="p-2 text-gray-800 text-right">
-                        {product.price} €
+            {" "}
+            {cart.length === 0 ? (
+              <p className=" text-xl py-10 font-bold  text-center">
+                Accounting : {cart.length}
+              </p>
+            ) : (
+              <div className="py-4">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b-2 border-gray-300">
+                      <th className="p-2 text-gray-600">Produit</th>
+                      <th className="p-2 text-gray-600 text-right">Prix (€)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {products.map((product, index) => (
+                      <tr key={index} className="border-b border-gray-200">
+                        <td className="p-2 text-gray-800">{product.name}</td>
+                        <td className="p-2 text-gray-800 text-right">
+                          {product.price} €
+                        </td>
+                      </tr>
+                    ))}
+                    {/* Ligne du total */}
+                    <tr className="font-bold">
+                      <td className="p-2 text-gray-900">Total</td>
+                      <td className="p-2 text-gray-900 text-right">
+                        {totalPrice} €
                       </td>
                     </tr>
-                  ))}
-                  {/* Ligne du total */}
-                  <tr className="font-bold">
-                    <td className="p-2 text-gray-900">Total</td>
-                    <td className="p-2 text-gray-900 text-right">
-                      {totalPrice} €
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                  </tbody>
+                </table>
+              </div>
+            )}
             {/* Bouton de validation */}
-            <button className="rounded-xl w-full bg-gray-900 text-white py-3 hover:bg-gray-700 transition">
+            <button className={`rounded-xl w-full bg-gray-900 text-white py-3 hover:bg-gray-700 transition ${
+            isDisabled ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-700"
+          }`}>
               Continuer vers le paiement
             </button>
           </div>

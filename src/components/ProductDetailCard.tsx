@@ -9,6 +9,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({
   addTotheBasket,
 }) => {
   const [productNumber, setProductNumber] = useState(1);
+  
 
   const handleAddToBasket = () => {
     addTotheBasket(productNumber);
@@ -19,7 +20,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({
   };
 
   const handleDecrement = () => {
-    if (productNumber > 1) {
+    if (productNumber >= 1) {
       setProductNumber((prev) => prev - 1);
     }
   };
@@ -168,7 +169,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({
                   More....
                 </a>
               </p>
-              <ul className="grid gap-y-4 mb-8">
+              {/* <ul className="grid gap-y-4 mb-8">
                 <li className="flex items-center gap-3">
                   <svg
                     width="26"
@@ -249,7 +250,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({
                     all size is available
                   </span>
                 </li>
-              </ul>
+              </ul> */}
               <p className="text-gray-900 text-lg leading-8 font-medium mb-4">
                 Size
               </p>
@@ -258,7 +259,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({
                   <button className="bg-white text-center py-1.5 px-6 w-full font-semibold text-lg leading-8 text-gray-900 border border-gray-200 flex items-center rounded-full justify-center transition-all duration-300 hover:bg-gray-50 hover:shadow-sm hover:shadow-gray-100 hover:border-gray-300 visited:border-gray-300 visited:bg-gray-50">
                     S
                   </button>
-                  <button className="bg-white text-center py-1.5 px-6 w-full font-semibold text-lg leading-8 text-gray-900 border border-gray-200 flex items-center rounded-full justify-center transition-all duration-300 hover:bg-gray-50 hover:shadow-sm hover:shadow-gray-100 hover:border-gray-300 visited:border-gray-300 visited:bg-gray-50">
+                  {/* <button className="bg-white text-center py-1.5 px-6 w-full font-semibold text-lg leading-8 text-gray-900 border border-gray-200 flex items-center rounded-full justify-center transition-all duration-300 hover:bg-gray-50 hover:shadow-sm hover:shadow-gray-100 hover:border-gray-300 visited:border-gray-300 visited:bg-gray-50">
                     M
                   </button>
                   <button className="bg-white text-center py-1.5 px-6 w-full font-semibold text-lg leading-8 text-gray-900 border border-gray-200 flex items-center rounded-full justify-center transition-all duration-300 hover:bg-gray-50 hover:shadow-sm hover:shadow-gray-100 hover:border-gray-300 visited:border-gray-300 visited:bg-gray-50">
@@ -269,7 +270,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({
                   </button>
                   <button className="bg-white text-center py-1.5 px-6 w-full font-semibold text-lg leading-8 text-gray-900 border border-gray-200 flex items-center rounded-full justify-center transition-all duration-300 hover:bg-gray-50 hover:shadow-sm hover:shadow-gray-100 hover:border-gray-300 visited:border-gray-300 visited:bg-gray-50">
                     XXL
-                  </button>
+                  </button> */}
                 </div>
               </div>
 
