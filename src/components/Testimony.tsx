@@ -18,8 +18,8 @@ const Testimony = () => {
     {
       id: 2,
       image: image1,
-      name: "Bellla",
-      pseudo: "Miss potcholi",
+      name: "Cynthia",
+      pseudo: "Miss fresh",
       testimonial:
         "Share a testimonial that hits some of your benefits from one of your popular customers."
     },
