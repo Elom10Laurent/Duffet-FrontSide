@@ -22,12 +22,12 @@ interface HomeNavBarProps {
 }
 
 const menuItems = [
-  { name: "Home", href: "#", current: true },
-  { name: "Shop", href: "#", current: false },
-  { name: "Local", href: "#", current: false },
-  { name: "Customer Box", href: "#", current: false },
-  { name: "...", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Home", href: "/", current: true },
+  { name: "Shop", href: "/products/category", current: false },
+  // { name: "Local", href: "#", current: false },
+  { name: "Customer Box", href: "customer", current: false },
+  // { name: "...", href: "#", current: false },
+  { name: "Contact", href: "/contact", current: false },
 ];
 
 const HomeNavBar: FC<HomeNavBarProps> = ({ value }) => {
