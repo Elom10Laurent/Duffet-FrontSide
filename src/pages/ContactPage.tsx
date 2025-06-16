@@ -1,5 +1,7 @@
 // import React from 'react'
 import Footer from "@/components/Footer";
+import HomeNavBar from "@/components/HomeNavBar";
+import Navigation from "@/components/Navigation";
 import { Textarea } from "@headlessui/react";
 import { ShoppingBagIcon } from "@heroicons/react/16/solid";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
@@ -17,32 +19,8 @@ const navItems = [
 const ContactPage = () => {
   return (
     <div>
-      <div className="bg-cover bg-center w-full flex flex-col py-10 bg-opacity-70">
-        <div className="container mx-auto py-4 flex items-center justify-between">
-          <p className="text-2xl font-bold text-gray-900">Duffet</p>
-          <div className="flex gap-4">
-            <Link
-              to="/"
-              className="flex items-center font-semibold justify-center w-32 gap-2 py-1 px-3 rounded-full bg-black/10 backdrop-blur-md border border-black/30 text-gray-900 shadow-md hover:bg-black/20 transition"
-            >
-              <HomeIcon className="h-5 w-5" />
-              <p>Home</p>
-            </Link>
-            <ul className="flex items-center font-semibold gap-2 py-2 px-3 rounded-full bg-black/10 backdrop-blur-md border border-black/30 text-gray-900 shadow-md">
-              {navItems.map((nav, index) => (
-                <li key={index}>
-                  <Link
-                    to={nav.link}
-                    className="flex items-center justify-center w-28 gap-2 py-2 px-3 rounded-full hover:bg-black/20 transition"
-                  >
-                    <ShoppingBagIcon className="h-5 w-5" />
-                    {nav.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div className="bg-cover bg-center w-full flex flex-col pb-10 bg-opacity-70">
+       <HomeNavBar/>
 
         <div className="container mx-auto flex  pt-8">
           <div className="flex flex-col w-1/2  text-gray-900">

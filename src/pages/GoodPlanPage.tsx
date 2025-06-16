@@ -1,55 +1,27 @@
 import ProductPic from "@/assets/images/T-shirt.jpeg";
 import { ArrowRightIcon, ShoppingBagIcon } from "@heroicons/react/16/solid";
-import {
-  HomeIcon,
-  FilterIcon,
-  SearchIcon,
-} from "lucide-react";
+import { HomeIcon, FilterIcon, SearchIcon, AlignJustify } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardBody, Row } from "reactstrap";
 import { productsData } from "@/Mock/Products";
 import StarRatings from "react-star-ratings";
 import Footer from "@/components/Footer";
+import Navigation from "@/components/Navigation";
+import HomeNavBar from "@/components/HomeNavBar";
 
 const navItems = [
-  { name: "Shop", link: "/products/category/T-shirt" },
-  { name: " C-Box", link: "/customer" },
-  { name: "Contact", link: "/contact" },
+  { name: "Shop", link: "/products/category/T-shirt", icon:"" },
+  { name: " C-Box", link: "/customer", icon:"" },
+  { name: "Contact", link: "/contact", icon:""},
 ];
 const GoodPlanPage = () => {
   return (
     <div>
       <div
-        className="bg-[#f7c002] bg-cover bg-center w-full flex flex-col py-10"
-        style={{ backgroundImage: `url(${ProductPic})` }}
+        className="bg-[#f7c002] bg-cover bg-center w-full flex flex-col pb-10"
+        style={{backgroundImage: `url(${ProductPic})`}}
       >
-        <div className="flex items-center justify-between relative container mx-auto py-4">
-          <p className="text-2xl font-bold text-white">Duffet</p>
-
-          <div className="flex gap-4">
-            <Link
-              to="/"
-              className="flex items-center font-semibold justify-center w-32 gap-2 py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white shadow-md hover:bg-white/20 transition"
-            >
-              <HomeIcon className="h-5 w-5" />
-              <p>Home</p>
-            </Link>
-
-            <ul className="flex items-center font-semibold gap-2 py-2 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white shadow-md">
-              {navItems.map((nav, index) => (
-               <li key={index}>
-                  <Link
-                    to={nav.link}
-                    className="flex items-center justify-center w-28 gap-2 py-2 px-3 rounded-full hover:bg-white/20 transition"
-                  >
-                    <ShoppingBagIcon className="h-5 w-5" />
-                    {nav.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <HomeNavBar/>
 
         <div className="container mx-auto  flex flex-col relative ">
           <div className="flex flex-col relative pt-8 z-20">
@@ -64,7 +36,7 @@ const GoodPlanPage = () => {
             <div className=" bg-white rounded-2xl  px-6  pb-10 mt-28">
               <div className=" ">
                 <div className="flex items-center justify-between relative my-4">
-                  <p className="text-2xl font-bold">Duffet</p>
+                  <p className="text-2xl font-bold">vos offres </p>
 
                   <div className="flex gap-4">
                     {/* Bouton Filter */}
@@ -85,7 +57,7 @@ const GoodPlanPage = () => {
                   </div>
                 </div>
               </div>
-              <div className=" flex gap-4">
+              <div className=" grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div className="max-w-sm rounded-2xl overflow-hidden shadow-lg relative group">
                   {/* Image avec position relative */}
                   <img
@@ -110,7 +82,7 @@ const GoodPlanPage = () => {
 
                   <div className="px-6 pb-4 bg-white">
                     <button className=" flex   gap-2 items-center justify-between bg-gray-100 text-gray-800 rounded-full px-3 py-1 text-xs font-medium mr-2 mb-2">
-                      j'essaye <ArrowRightIcon className="h-4 " />
+                      Découvrez <ArrowRightIcon className="h-4 " />
                     </button>
                   </div>
                 </div>
@@ -139,7 +111,7 @@ const GoodPlanPage = () => {
 
                   <div className="px-6 pb-4 bg-white">
                     <button className=" flex   gap-2 items-center justify-between bg-gray-100 text-gray-800 rounded-full px-3 py-1 text-xs font-medium mr-2 mb-2">
-                      j'essaye <ArrowRightIcon className="h-4 " />
+                      Découvrez <ArrowRightIcon className="h-4 " />
                     </button>
                   </div>
                 </div>
@@ -167,7 +139,7 @@ const GoodPlanPage = () => {
 
                   <div className="px-6 pb-4 bg-white">
                     <button className=" flex   gap-2 items-center justify-between bg-gray-100 text-gray-800 rounded-full px-3 py-1 text-xs font-medium mr-2 mb-2">
-                      j'essaye <ArrowRightIcon className="h-4 " />
+                      Découvrez <ArrowRightIcon className="h-4 " />
                     </button>
                   </div>
                 </div>
