@@ -1,21 +1,11 @@
 // import React from 'react'
 import Footer from "@/components/Footer";
 import HomeNavBar from "@/components/HomeNavBar";
-import Navigation from "@/components/Navigation";
 import { Textarea } from "@headlessui/react";
-import { ShoppingBagIcon } from "@heroicons/react/16/solid";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { Facebook, HomeIcon, Instagram } from "lucide-react";
-import { Link } from "react-router-dom";
-// import { Card, CardBody, Row } from "reactstrap";
-// import { productsData } from "@/Mock/Products";
-// import StarRatings from "react-star-ratings";
+import { Facebook, Instagram } from "lucide-react";
 
-const navItems = [
-  { name: "Shop", link: "/products/category/T-shirt" },
-  { name: " C-Box", link: "/customer" },
-  { name: "Contact", link: "/contact" },
-];
+
 const ContactPage = () => {
   return (
     <div>

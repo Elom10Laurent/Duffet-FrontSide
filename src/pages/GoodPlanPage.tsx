@@ -1,24 +1,19 @@
 import ProductPic from "@/assets/images/T-shirt.jpeg";
-import { ArrowRightIcon, ShoppingBagIcon } from "@heroicons/react/16/solid";
-import { HomeIcon, FilterIcon, SearchIcon, AlignJustify } from "lucide-react";
+import { ArrowRightIcon } from "@heroicons/react/16/solid";
+import { FilterIcon, SearchIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardBody, Row } from "reactstrap";
 import { productsData } from "@/Mock/Products";
 import StarRatings from "react-star-ratings";
 import Footer from "@/components/Footer";
-import Navigation from "@/components/Navigation";
 import HomeNavBar from "@/components/HomeNavBar";
 
-const navItems = [
-  { name: "Shop", link: "/products/category/T-shirt", icon:"" },
-  { name: " C-Box", link: "/customer", icon:"" },
-  { name: "Contact", link: "/contact", icon:""},
-];
+
 const GoodPlanPage = () => {
   return (
     <div>
       <div
-        className="bg-[#f7c002] bg-cover bg-center w-full flex flex-col pb-10"
+        className="bg-cover bg-center w-full flex flex-col pb-10"
         style={{backgroundImage: `url(${ProductPic})`}}
       >
         <HomeNavBar/>
@@ -186,7 +181,7 @@ const GoodPlanPage = () => {
                 className="w-full bg-white rounded-lg shadow-lg"
               >
                 {" "}
-                <Link to={`/Product/${product.id}/${product.category}`}>
+                <Link to={`Product/${product.id}/`}>
                   {" "}
                   <CardBody>
                     <div className=" relative  ">
@@ -197,7 +192,7 @@ const GoodPlanPage = () => {
                       </div>
                       <img
                         src={product.image}
-                        alt="Product"
+                        alt={product.name}
                         className=" mx-auto"
                       />
                     </div>

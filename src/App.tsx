@@ -15,16 +15,16 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/connect" element={<Connect />} />
-        <Route path="/register" element={<Register />} />
+        {/* <Route path="/connect" element={<Connect />} />
+        <Route path="/register" element={<Register />} /> */}
         <Route path="/products/category/:name" element={<ProductsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/customer" element={<GoodPlanPage />} />
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="/product/:id/:name" element={<ProductDetail />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/product/cart" element={<CartPage />} />
-          <Route path="/product/cart/:id/shipping" element={<ShippingPage />} />
+          <Route path="/order/:id/confirmation" element={<ShippingPage />} />
         </Route>
       </Routes>
     </Router>

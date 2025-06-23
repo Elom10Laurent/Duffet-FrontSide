@@ -13,7 +13,7 @@ const Testimony = () => {
       name: "Stanislas",
       pseudo: "M. Sourire",
       testimonial:
-        "Share a testimonial that hits some of your benefits from one of your popular customers."
+        "Share a testimonial that hits some of your benefits from one of your popular customers.",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const Testimony = () => {
       name: "Cynthia",
       pseudo: "Miss fresh",
       testimonial:
-        "Share a testimonial that hits some of your benefits from one of your popular customers."
+        "Share a testimonial that hits some of your benefits from one of your popular customers.",
     },
     {
       id: 3,
@@ -29,8 +29,8 @@ const Testimony = () => {
       name: "Karib",
       pseudo: "M. Du Sud",
       testimonial:
-        "Share a testimonial that hits some of your benefits from one of your popular customers."
-    }
+        "Share a testimonial that hits some of your benefits from one of your popular customers.",
+    },
   ];
 
   const handleToggle = (id: number) => {
@@ -53,7 +53,9 @@ const Testimony = () => {
           <div
             key={opinion.id}
             onClick={() => handleToggle(opinion.id)}
-            className={`${open === opinion.id ? "w-[50em]" : ""} cursor-pointer  transition-all duration-500 ease-in-out`}
+            className={`${
+              open === opinion.id ? "w-[50em]" : ""
+            } cursor-pointer  transition-all duration-500 ease-in-out`}
           >
             <div
               className={`${
@@ -78,11 +80,23 @@ const Testimony = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className={`${open === opinion.id ? "" : "rotate-90 w-28 p-2"} transition-all duration-500 ease-in-out`}>
+                <div
+                  className={`${
+                    open === opinion.id ? "" : "rotate-90 w-28 p-2"
+                  } transition-all duration-500 ease-in-out`}
+                >
                   <div className="text-lg font-medium text-gray-700">
                     {opinion.name}
                   </div>
-                  <div className=   {`${open === opinion.id ? "text-orange-900" : "text-orange-500"}`} >{opinion.pseudo}</div>
+                  <div
+                    className={`${
+                      open === opinion.id
+                        ? "text-orange-900"
+                        : "text-orange-500"
+                    }`}
+                  >
+                    {opinion.pseudo}
+                  </div>
                 </div>
               </div>
 

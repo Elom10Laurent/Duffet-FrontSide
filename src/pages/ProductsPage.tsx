@@ -22,11 +22,11 @@ const ProductsPage = () => {
   return (
     <div>
       <div
-        className="bg-[#f7c002] bg-cover bg-center w-full flex flex-col "
+        className=" bg-cover bg-center w-full flex flex-col "
         style={{ backgroundImage: `url(${ProductPic})` }}
       >
         <div className="relative ">
-          <HomeNavBar value={0} />
+          <HomeNavBar/>
         </div>
         <div className="container mx-auto px-6 flex relative items-center pb-8">
           <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative pt-14 z-20">
@@ -66,7 +66,7 @@ const ProductsPage = () => {
               className="w-full bg-white rounded-lg shadow-lg"
             >
               {" "}
-              <Link to={`/Product/${product.id}/${product.category}`}>
+              <Link to={`Product/${product.id}/`}>
                 {" "}
                 <CardBody>
                   <div className=" relative  ">
@@ -77,7 +77,7 @@ const ProductsPage = () => {
                     </div>
                     <img
                       src={product.image}
-                      alt="Product"
+                      alt={product.name}
                       className=" mx-auto"
                     />
                   </div>

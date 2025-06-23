@@ -123,7 +123,7 @@ const ProductComponent = () => {
               className="w-full bg-white rounded-lg shadow-lg"
             >
               {" "}
-              <Link to={`/Product/${product.id}/${product.category}`}>
+              <Link to={`Product/${product.id}/`}>
                 {" "}
                 <CardBody>
                   <div className=" relative  ">
@@ -134,7 +134,7 @@ const ProductComponent = () => {
                     </div>
                     <img
                       src={product.image}
-                      alt="Product"
+                      alt={product.name}
                       className=" mx-auto"
                     />
                   </div>
