@@ -22,7 +22,7 @@ const GoodPlanPage = () => {
           <div className="flex flex-col relative pt-8 z-20">
             {/* <span className="w-20 h-2 bg-gray-800 dar:bg-white mb-12"></span> */}
             <h1 className="font-bebas-neue uppercase text-4xl md:text-6xl  font-black flex flex-col leading-none dar:text-white text-gray-800">
-              T-shirt
+              Customer Box
             </h1>
             <p className="text-md sm:text-xl text-gray-700 dar:text-white">
               Le Vous trouverez de Bon plans et nos partenariat pour plus.
@@ -41,7 +41,7 @@ const GoodPlanPage = () => {
                     </button>
 
                     {/* Barre de recherche */}
-                    <div className="flex items-center w-72 font-semibold gap-2 py-2 px-4 rounded-full bg-black/10 backdrop-blur-md border border-black/30 text-black shadow-md">
+                    <div className=" hidden md:flex items-center w-72 font-semibold gap-2 py-2 px-4 rounded-full bg-black/10 backdrop-blur-md border border-black/30 text-black shadow-md">
                       <SearchIcon className="h-5 w-5 text-black/60" />
                       <input
                         type="text"
@@ -174,7 +174,7 @@ const GoodPlanPage = () => {
 
       <div>
         <div className=" container mx-auto mt-8">
-          <Row className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6">
+          <Row className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {productsData.map((product) => (
               <Card
                 key={product.id}
